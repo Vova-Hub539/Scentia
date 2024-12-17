@@ -1,0 +1,6 @@
+- Percentage per event can be dynamically generated, their sum must be 100
+- The absence of platform losses is done at a distance, provided many games are played. If the platform loses in 1 game, it will earn in the rest. The total sum of expenses and profits will be equal to 0 or close to this number.
+- The script generates 10 random bets, and the average shows what the difference in income will be at a distance of 100 games.
+- The window with “potentialWin” shows how much the platform will have to pay if one or the other team wins. Total: This is the total amount of money that the platform has received from users.
+- There is also a code that sometimes puts a co if there is a lot of money on it. This is done to reduce risks.
+- I wrote the code for dynamic percentage generation, but I abandoned this path and went the other way.

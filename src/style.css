@@ -1,0 +1,183 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter_28pt-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General */
+
+body {
+    background-color: #F9F9F9;
+    font-family: 'Inter';
+}
+
+.border {
+    border-radius: 24px;
+    border: 1px #E3E4E8 solid;
+}
+
+.scentia {
+    display: flex;
+}
+
+.page-content {
+    width: 100%;
+}
+
+/* Back Container */
+
+.back-container {
+    padding: 20px 15px;
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    background-color: #FFFFFF;
+}
+
+.back-container-arrow {
+    margin-top: 12px;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 8%;
+    height: 90vh;
+    justify-content: space-between;
+    padding: 30px 10px;
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 8px;
+    left: 0;
+}
+
+.sidebar-button {
+    padding: 10px 5px;
+    width: 90%;
+    height: 69px;
+    cursor: pointer;
+    border-radius: 12px;
+    margin: 5px 0;
+}
+
+.sidebar-logo {
+    width: max-content;
+    margin: 0 auto;
+}
+
+.sidebar-button-text {
+    width: max-content;
+    margin: 0 auto;
+    font-size: 12px;
+}
+
+.sidebar-button-icon {
+    width: max-content;
+    margin: 10px auto 10px auto;
+}
+
+.active {
+    background-color: #202020;
+    color: #FFFFFF;
+}
+
+.inactive {
+    color: #747678;
+}
+
+/* Buttons */
+
+.scentia-button {
+    background-color: #1E1E1E;
+    padding: 10px 20px;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: 0;
+}
+
+.create-button,
+.cancel-button {
+    width: max-content;
+    margin: 0 auto;
+}
+
+.create-button {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.create {
+    width: 100%;
+    padding: 15px 40px;
+}
+
+.cancel {
+    color: #D73636;
+    background-color: #FFFFFF;
+}
+
+/* Tools */
+
+.tools-content {
+    padding: 20px 15px;
+    width: 40%;
+    margin: 10px auto 0 auto;
+    background-color: #FFFFFF;
+}
+
+.tools-content .title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.tools-content .description {
+    font-size: 16px;
+    color: #747678;
+    margin-top: 5px;
+}
+
+.tools-content .subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #202020;
+}
+
+.tools-content .small-description {
+    color: #747678;
+    margin-top: 5px;
+}
+
+.tools-block {
+    margin: 10px 0;
+}
+
+.tools-content select {
+    width: 100%;
+    padding: 20px 24px;
+    border: 1px #F3F3F3 solid;
+    border-radius: 40px;
+    margin: 5px 0;
+    font-family: "Inter";
+    font-size: 16px;
+}
+
+.tools-content textarea {
+    border: 1px #E3E4E8 solid;
+    padding: 12px 24px;
+    width: 90%;
+    height: 150px;
+    gap: 10px;
+    border-radius: 12px;
+    margin-top: 10px;
+    resize: none;
+    font-size: 14px;
+    font-family: "Inter";
+}
+
+.tools-button-container {
+    width: 100%;
+}
