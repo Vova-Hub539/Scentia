@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import BackContainer from "./BackContainer";
 import lessonPlanner from "./../assets/lessonPlanner.png"
 import Button from "./Button";
-import { jsPDF } from "jspdf";
 
-const Tools = () => {
+const Tools = ({ setLessonPlan }) => {
     const [gradeLevel, setGradeLevel] = useState('1st');
     const [duration, setDuration] = useState('60');
     const [topic, setTopic] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const handleGenerateLesson = async () => {
         const requestBody = {
@@ -17,6 +17,7 @@ const Tools = () => {
         };
 
         try {
+            setLoading(true);
             const response = await fetch('https://scentia-api-app-esd2apfgcyhyhwdg.swedencentral-01.azurewebsites.net/ai_tools/lesson_planner', {
                 method: 'POST',
                 headers: {
@@ -31,37 +32,16 @@ const Tools = () => {
             }
 
             const data = await response.text();
-            generatePDF(data);
+
+            setLessonPlan(data);
         } catch (err) {
             console.log('Failed to generate lesson plan: ' + err.message);
+        } finally {
+            setLoading(false);
+            setGradeLevel('1st');
+            setDuration('60');
+            setTopic('');
         }
-    };
-
-    const generatePDF = (data) => {
-        const doc = new jsPDF();
-        const lines = data.split('\n');
-
-        let yPosition = 10;
-
-        lines.forEach(line => {
-            if (line.startsWith("-")) {
-                doc.setFont("helvetica", "italic");
-                doc.text(line, 10, yPosition);
-                yPosition += 10;
-            }
-            else if (line.startsWith("**") && line.endsWith("**")) {
-                doc.setFont("helvetica", "bold");
-                doc.text(line.slice(2, -2), 10, yPosition);
-                yPosition += 10;
-            }
-            else {
-                doc.setFont("helvetica", "normal");
-                doc.text(line, 10, yPosition);
-                yPosition += 10;
-            }
-        });
-
-        doc.save("lesson_plan.pdf");
     };
 
     return <div className="tools">
@@ -87,7 +67,10 @@ const Tools = () => {
                     <div className="subtitle">Lecture duration (in minutes)</div>
                     <div>
                         <select value={duration} onChange={(e) => setDuration(e)}>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
                             <option value="60">60</option>
+                            <option value="120">120</option>
                         </select>
                     </div>
                 </div>
@@ -103,7 +86,7 @@ const Tools = () => {
             </div>
             <div className="tools-button-container">
                 <div className="create-button">
-                    <Button onClick={handleGenerateLesson} className="create" text="Create lesson plan" />
+                    <Button disabled={loading} onClick={handleGenerateLesson} className="create" text="Create lesson plan" />
                 </div>
                 <div className="cancel-button">
                     <Button className="cancel" text="Cancel" />

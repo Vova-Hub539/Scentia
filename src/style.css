@@ -21,23 +21,63 @@ body {
     display: flex;
 }
 
-.page-content {
+.page {
     width: 100%;
 }
 
-/* Back Container */
+.flex {
+    display: flex;
+}
 
-.back-container {
+.page-content {
     padding: 20px 15px;
     width: 40%;
     margin: 0 auto;
-    display: flex;
     gap: 10px;
     background-color: #FFFFFF;
+    margin-bottom: 10px;
 }
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.description {
+    font-size: 16px;
+    color: #747678;
+    margin: 5px 0;
+}
+
+.subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #202020;
+}
+
+.small-description {
+    color: #747678;
+    margin: 5px 0;
+}
+
+.link {
+    color: #1e90ff;
+    cursor: pointer;
+}
+
+/* Pdf Page */
+
+.pdg-field {
+    height: 300px;
+    margin: 5px 0;
+}
+
+
+/* Back Container */
 
 .back-container-arrow {
     margin-top: 12px;
+    cursor: pointer;
 }
 
 /* Sidebar */
@@ -115,6 +155,13 @@ body {
     padding: 15px 40px;
 }
 
+.create:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+    background-color: #d3d3d3;
+    color: #a9a9a9;
+}
+
 .cancel {
     color: #D73636;
     background-color: #FFFFFF;
@@ -125,30 +172,8 @@ body {
 .tools-content {
     padding: 20px 15px;
     width: 40%;
-    margin: 10px auto 0 auto;
+    margin: 0 auto 0 auto;
     background-color: #FFFFFF;
-}
-
-.tools-content .title {
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.tools-content .description {
-    font-size: 16px;
-    color: #747678;
-    margin-top: 5px;
-}
-
-.tools-content .subtitle {
-    font-size: 16px;
-    font-weight: 600;
-    color: #202020;
-}
-
-.tools-content .small-description {
-    color: #747678;
-    margin-top: 5px;
 }
 
 .tools-block {
@@ -165,14 +190,13 @@ body {
     font-size: 16px;
 }
 
-.tools-content textarea {
+textarea {
     border: 1px #E3E4E8 solid;
     padding: 12px 24px;
     width: 90%;
     height: 150px;
     gap: 10px;
     border-radius: 12px;
-    margin-top: 10px;
     resize: none;
     font-size: 14px;
     font-family: "Inter";
